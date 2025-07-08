@@ -1,0 +1,8 @@
+# Ignore all jpg files
+*.jpg
+
+# Ignore all extracted stamp output folders
+extracted_stamps_*/
+
+# Ignore other output folders if needed
+mosaic_output*.jpg 

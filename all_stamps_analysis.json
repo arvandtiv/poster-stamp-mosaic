@@ -1,0 +1,482 @@
+[
+  {
+    "row": 1,
+    "col": 1,
+    "file": "stamp_r1_c1.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      131.34290309130978,
+      170.0720412174638,
+      189.9554768002859
+    ],
+    "avg_brightness": 171.60846387515636
+  },
+  {
+    "row": 1,
+    "col": 2,
+    "file": "stamp_r1_c2.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      144.923580916076,
+      154.57239859431772,
+      158.89883256894396
+    ],
+    "avg_brightness": 154.64116385728752
+  },
+  {
+    "row": 1,
+    "col": 3,
+    "file": "stamp_r1_c3.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      124.53442730359164,
+      132.18261957233904,
+      175.6671034605992
+    ],
+    "avg_brightness": 144.30487223777473
+  },
+  {
+    "row": 1,
+    "col": 4,
+    "file": "stamp_r1_c4.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      97.4478229793317,
+      106.87676454821609,
+      171.36193340877955
+    ],
+    "avg_brightness": 125.08055869914826
+  },
+  {
+    "row": 1,
+    "col": 5,
+    "file": "stamp_r1_c5.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      99.45544701888142,
+      108.10393710167371,
+      172.1169813568408
+    ],
+    "avg_brightness": 126.25975340997081
+  },
+  {
+    "row": 1,
+    "col": 6,
+    "file": "stamp_r1_c6.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      100.04106855679314,
+      108.8401929835011,
+      170.30070284114598
+    ],
+    "avg_brightness": 126.21192447435821
+  },
+  {
+    "row": 1,
+    "col": 7,
+    "file": "stamp_r1_c7.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      103.40058967180892,
+      111.35022931681458,
+      170.12055512537972
+    ],
+    "avg_brightness": 128.0185835964024
+  },
+  {
+    "row": 1,
+    "col": 8,
+    "file": "stamp_r1_c8.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      114.62275894931204,
+      121.36095062243136,
+      167.73268211328846
+    ],
+    "avg_brightness": 134.46042051343142
+  },
+  {
+    "row": 2,
+    "col": 1,
+    "file": "stamp_r2_c1.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      152.02576091488476,
+      159.89683721484306,
+      165.78313181249626
+    ],
+    "avg_brightness": 160.75766871165644
+  },
+  {
+    "row": 2,
+    "col": 2,
+    "file": "stamp_r2_c2.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      112.83015665018762,
+      150.8053189588421,
+      174.26824111025076
+    ],
+    "avg_brightness": 153.52504616117696
+  },
+  {
+    "row": 2,
+    "col": 3,
+    "file": "stamp_r2_c3.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      139.44832926320805,
+      152.66930728453153,
+      154.35975936625172
+    ],
+    "avg_brightness": 151.66481029245338
+  },
+  {
+    "row": 2,
+    "col": 4,
+    "file": "stamp_r2_c4.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      144.35964024063375,
+      155.345523854905,
+      164.30195366013461
+    ],
+    "avg_brightness": 156.74703675025313
+  },
+  {
+    "row": 2,
+    "col": 5,
+    "file": "stamp_r2_c5.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      141.74459467508487,
+      138.59518136875334,
+      146.71591518256
+    ],
+    "avg_brightness": 141.38963011495622
+  },
+  {
+    "row": 2,
+    "col": 6,
+    "file": "stamp_r2_c6.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      150.915271904223,
+      163.3684555363631,
+      158.03007921853595
+    ],
+    "avg_brightness": 160.34856155816308
+  },
+  {
+    "row": 2,
+    "col": 7,
+    "file": "stamp_r2_c7.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      144.27366132586812,
+      144.98627077252962,
+      126.26091488474596
+    ],
+    "avg_brightness": 139.31073917445946
+  },
+  {
+    "row": 2,
+    "col": 8,
+    "file": "stamp_r2_c8.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      139.48165465483353,
+      156.1897075466079,
+      155.35466674608375
+    ],
+    "avg_brightness": 154.1025969384716
+  },
+  {
+    "row": 3,
+    "col": 1,
+    "file": "stamp_r3_c1.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      195.50547977842635,
+      198.59047590684378,
+      200.24855560188217
+    ],
+    "avg_brightness": 198.77065340401452
+  },
+  {
+    "row": 3,
+    "col": 2,
+    "file": "stamp_r3_c2.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      101.75227827744357,
+      132.5804395735303,
+      162.9322175233784
+    ],
+    "avg_brightness": 138.14098516886057
+  },
+  {
+    "row": 3,
+    "col": 3,
+    "file": "stamp_r3_c3.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      145.06316635892549,
+      143.7680922032283,
+      136.58151170409195
+    ],
+    "avg_brightness": 141.77657990350824
+  },
+  {
+    "row": 3,
+    "col": 4,
+    "file": "stamp_r3_c4.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      124.52156173685151,
+      160.3800107213056,
+      170.35410089939842
+    ],
+    "avg_brightness": 159.26993865030676
+  },
+  {
+    "row": 3,
+    "col": 5,
+    "file": "stamp_r3_c5.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      164.34275418428734,
+      156.27958782536186,
+      143.8474596461969
+    ],
+    "avg_brightness": 153.49356721662994
+  },
+  {
+    "row": 3,
+    "col": 6,
+    "file": "stamp_r3_c6.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      162.3358448984454,
+      158.99240574185478,
+      159.13913872178213
+    ],
+    "avg_brightness": 159.41586753231283
+  },
+  {
+    "row": 3,
+    "col": 7,
+    "file": "stamp_r3_c7.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      148.18062421823814,
+      137.80442551670737,
+      118.05908630651021
+    ],
+    "avg_brightness": 133.08023110369885
+  },
+  {
+    "row": 3,
+    "col": 8,
+    "file": "stamp_r3_c8.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      141.0574781106677,
+      147.81470010125676,
+      162.3142235987849
+    ],
+    "avg_brightness": 151.35865745428555
+  },
+  {
+    "row": 4,
+    "col": 1,
+    "file": "stamp_r4_c1.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      144.76600750491394,
+      171.66996247543034,
+      165.45041396152243
+    ],
+    "avg_brightness": 166.74426707963548
+  },
+  {
+    "row": 4,
+    "col": 2,
+    "file": "stamp_r4_c2.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      161.0840133420692,
+      144.49615819882067,
+      137.90201917922448
+    ],
+    "avg_brightness": 144.41381261540295
+  },
+  {
+    "row": 4,
+    "col": 3,
+    "file": "stamp_r4_c3.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      177.4558043957353,
+      166.96959318601466,
+      159.16153433795938
+    ],
+    "avg_brightness": 165.81154327238073
+  },
+  {
+    "row": 4,
+    "col": 4,
+    "file": "stamp_r4_c4.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      127.22115670975043,
+      140.5441658228602,
+      165.24361188873667
+    ],
+    "avg_brightness": 146.41711835130144
+  },
+  {
+    "row": 4,
+    "col": 5,
+    "file": "stamp_r4_c5.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      137.99594972898922,
+      145.9577401870272,
+      165.28295312406934
+    ],
+    "avg_brightness": 150.8306331526595
+  },
+  {
+    "row": 4,
+    "col": 6,
+    "file": "stamp_r4_c6.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      161.30752278277444,
+      161.54538686044432,
+      169.51518851629044
+    ],
+    "avg_brightness": 163.90184049079755
+  },
+  {
+    "row": 4,
+    "col": 7,
+    "file": "stamp_r4_c7.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      108.61168026684139,
+      136.4777235094407,
+      184.85755554231937
+    ],
+    "avg_brightness": 147.7744058609804
+  },
+  {
+    "row": 4,
+    "col": 8,
+    "file": "stamp_r4_c8.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      160.32631484900827,
+      154.96369646792542,
+      167.84740008338792
+    ],
+    "avg_brightness": 159.4302221692775
+  },
+  {
+    "row": 5,
+    "col": 1,
+    "file": "stamp_r5_c1.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      126.66266603133003,
+      145.5760914884746,
+      170.6664780511049
+    ],
+    "avg_brightness": 150.910298409673
+  },
+  {
+    "row": 5,
+    "col": 2,
+    "file": "stamp_r5_c2.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      155.18482339627136,
+      154.22794686997437,
+      152.60611114420155
+    ],
+    "avg_brightness": 153.84671511108465
+  },
+  {
+    "row": 5,
+    "col": 3,
+    "file": "stamp_r5_c3.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      135.51226993865032,
+      135.5847578771815,
+      138.87295252844123
+    ],
+    "avg_brightness": 136.56120078622908
+  },
+  {
+    "row": 5,
+    "col": 4,
+    "file": "stamp_r5_c4.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      120.64646494728692,
+      120.18312585621538,
+      112.9956816963488
+    ],
+    "avg_brightness": 118.08642563583298
+  },
+  {
+    "row": 5,
+    "col": 5,
+    "file": "stamp_r5_c5.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      113.09404967538269,
+      118.50911310977426,
+      103.32321758294121
+    ],
+    "avg_brightness": 113.32991839895169
+  },
+  {
+    "row": 5,
+    "col": 6,
+    "file": "stamp_r5_c6.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      165.12374173566025,
+      138.036571564715,
+      171.52763714336768
+    ],
+    "avg_brightness": 151.14828161296086
+  },
+  {
+    "row": 5,
+    "col": 7,
+    "file": "stamp_r5_c7.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      160.36199297158853,
+      167.5913693489785,
+      165.03261063791768
+    ],
+    "avg_brightness": 166.00613496932516
+  },
+  {
+    "row": 5,
+    "col": 8,
+    "file": "stamp_r5_c8.jpg",
+    "batch": "extracted_stamps_1st_eight_by_5",
+    "avg_color_bgr": [
+      146.51492048365,
+      158.78724164631603,
+      166.94305795461315
+    ],
+    "avg_brightness": 159.84698314372505
+  }
+]
