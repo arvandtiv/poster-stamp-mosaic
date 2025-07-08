@@ -10,6 +10,12 @@ output_mosaic = 'mosaic_output_dup_allowed.jpg'
 output_blueprint = 'mosaic_blueprint_dup_allowed.json'
 block_size = 3  # Use 3x3 blocks
 
+# Load batch metadata for physical stamp size
+with open('code/batch_metadata.json', 'r') as f:
+    batch_metadata = json.load(f)
+stamp_width_cm = batch_metadata['batches'][0]['stamp_width_cm']
+stamp_height_cm = batch_metadata['batches'][0]['stamp_height_cm']
+
 # Load stamp analysis
 def load_stamps():
     with open(analysis_file, 'r') as f:
@@ -107,8 +113,18 @@ def main():
                 })
     print("Saving output mosaic and blueprint...")
     cv2.imwrite(output_mosaic, mosaic)
+    # Export JSON with artwork size info
+    artwork_width_cm = n_blocks_x * stamp_width_cm
+    artwork_height_cm = n_blocks_y * stamp_height_cm
+    export = {
+        'artwork_width_cm': artwork_width_cm,
+        'artwork_height_cm': artwork_height_cm,
+        'stamp_width_cm': stamp_width_cm,
+        'stamp_height_cm': stamp_height_cm,
+        'blueprint': blueprint
+    }
     with open(output_blueprint, 'w') as f:
-        json.dump(blueprint, f, indent=2)
+        json.dump(export, f, indent=2)
     print("Done!")
 
 if __name__ == '__main__':
