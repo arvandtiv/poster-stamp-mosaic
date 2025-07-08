@@ -2,8 +2,12 @@ import cv2
 import os
 import json
 
+# INSTRUCTIONS:
+# Duplicate 'code/batch_metadata_example.json' as 'code/batch_metadata.json'.
+# Update 'batch_metadata.json' with details for each scan batch you want to process.
+
 # Load batch metadata
-with open('code/batch_metadata_example.json', 'r') as f:
+with open('code/batch_metadata.json', 'r') as f:
     metadata = json.load(f)
 
 PADDING_X = 15 + 8  # 23px crop from left and right

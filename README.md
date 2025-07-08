@@ -5,8 +5,8 @@ This project creates large-scale visual mosaics using scanned images of postage 
 
 ## Workflow
 1. **Batch Metadata Preparation**
-   - Describe each batch of scanned stamps in a JSON file (see `code/batch_metadata_example.json`).
-   - Specify the scan file name, grid size (rows, cols), and real-world stamp size.
+   - Duplicate `code/batch_metadata_example.json` as `code/batch_metadata.json`.
+   - Update `code/batch_metadata.json` with details for each scan batch you want to process (scan file name, grid size, real-world stamp size).
 
 2. **Stamp Extraction**
    - Run `code/extract_stamps.py` to extract individual stamps from each batch based on the metadata.
@@ -46,7 +46,7 @@ This project creates large-scale visual mosaics using scanned images of postage 
 source venv/bin/activate
 
 # Extract stamps from batches
-ython3 code/extract_stamps.py
+python3 code/extract_stamps.py
 
 # Analyze all extracted stamps
 python3 code/analyze_stamps.py
