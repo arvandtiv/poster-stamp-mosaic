@@ -5,4 +5,7 @@
 extracted_stamps_*/
 
 # Ignore other output folders if needed
-mosaic_output*.jpg 
+mosaic_output*.jpg
+
+extracted_stamps/stamp_analysis.json
+extracted_stamps/positions.json 
