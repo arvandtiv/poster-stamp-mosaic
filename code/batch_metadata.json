@@ -1,14 +1,43 @@
 {
   "batches": [
     {
-      "scan_file": "1st_eight_by_5.jpg",
+      "scan_file": "batch_1.jpg",
+      "rows": 10,
+      "cols": 7,
+      "stamp_width_cm": 4.0,
+      "stamp_height_cm": 3.3,
+      "padding_x": 14,
+      "padding_y": 9,
+      "sheet_width_cm": 28.0,
+      "sheet_height_cm": 28.5
+    },
+    {
+      "scan_file": "batch_2.jpg",
       "rows": 5,
       "cols": 8,
-      "stamp_width_cm": 4.5,
+      "stamp_width_cm": 3.0,
+      "stamp_height_cm": 4.5,
+      "padding_x": 10,
+      "padding_y": 18
+    },
+    {
+      "scan_file": "batch_3.jpg",
+      "rows": 8,
+      "cols": 5,
+      "stamp_width_cm": 3.3, 
+      "stamp_height_cm": 2.5,
+      "padding_x": 10, 
+      "padding_y": 10
+
+    },
+    {
+      "scan_file": "batch_4.jpg",
+      "rows": 6,
+      "cols": 3,
+      "stamp_width_cm": 4.0,
       "stamp_height_cm": 3.0,
-      "padding_x": 23,
-      "padding_y": 38
+      "padding_x": 10,
+      "padding_y": 10
     }
-    
   ]
 } 

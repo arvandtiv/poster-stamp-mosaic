@@ -24,6 +24,10 @@ for batch in metadata['batches']:
     padding_x = batch.get('padding_x', 23)  # Default to 23px if not specified
     padding_y = batch.get('padding_y', 38)  # Default to 38px if not specified
     
+    # Get stamp dimensions from batch metadata
+    stamp_width_cm = batch.get('stamp_width_cm', 3.0)  # Physical width in cm
+    stamp_height_cm = batch.get('stamp_height_cm', 4.5)  # Physical height in cm
+    
     # Create output directory if it doesn't exist
     os.makedirs(output_dir, exist_ok=True)
     
@@ -36,31 +40,52 @@ for batch in metadata['batches']:
     # Get image dimensions
     height, width, _ = img.shape
     
-    # Calculate the size of each stamp cell in the grid
-    stamp_h = height // rows  # Height of each stamp cell
-    stamp_w = width // cols   # Width of each stamp cell
+    # Use sheet physical size if provided, otherwise fall back to grid*stamp size
+    sheet_width_cm = batch.get('sheet_width_cm', cols * stamp_width_cm)
+    sheet_height_cm = batch.get('sheet_height_cm', rows * stamp_height_cm)
+    
+    pixels_per_cm_x = width / sheet_width_cm
+    pixels_per_cm_y = height / sheet_height_cm
+    
+    # Convert stamp dimensions from cm to pixels
+    stamp_w_px = int(stamp_width_cm * pixels_per_cm_x)
+    stamp_h_px = int(stamp_height_cm * pixels_per_cm_y)
+    
+    # Calculate the size of each stamp cell in the grid (for reference)
+    grid_stamp_h = height // rows  # Height of each stamp cell
+    grid_stamp_w = width // cols   # Width of each stamp cell
     
     # List to store position information for each extracted stamp
     positions = []
+    
+    # --- DEBUG: Draw crop lines on a copy of the input image ---
+    debug_img = img.copy()
+    crop_color = (0, 255, 0)  # Green in BGR
+    crop_thickness = 2
     
     # Iterate through each cell in the grid
     for row in range(rows):
         for col in range(cols):
             # Calculate the bounding box for this stamp cell
-            y1 = row * stamp_h  # Top edge of the cell
-            y2 = (row + 1) * stamp_h  # Bottom edge of the cell
-            x1 = col * stamp_w  # Left edge of the cell
-            x2 = (col + 1) * stamp_w  # Right edge of the cell
+            y1 = row * grid_stamp_h  # Top edge of the cell
+            y2 = (row + 1) * grid_stamp_h  # Bottom edge of the cell
+            x1 = col * grid_stamp_w  # Left edge of the cell
+            x2 = (col + 1) * grid_stamp_w  # Right edge of the cell
             
-            # Apply padding to create a cropped version of the stamp
-            # This removes borders and focuses on the stamp content
-            y1_c = min(height, max(0, y1 + padding_y))  # Crop from top
-            y2_c = min(height, max(0, y2 - padding_y))  # Crop from bottom
-            x1_c = min(width, max(0, x1 + padding_x))   # Crop from left
-            x2_c = min(width, max(0, x2 - padding_x))   # Crop from right
+            # Only apply padding to internal stamps
+            pad_y1 = 0 if row == 0 else padding_y
+            pad_y2 = 0 if row == rows - 1 else padding_y
+            pad_x1 = 0 if col == 0 else padding_x
+            pad_x2 = 0 if col == cols - 1 else padding_x
             
-            # Only process if the cropped area is valid (positive dimensions)
+            y1_c = min(height, max(0, y1 + pad_y1))  # Crop from top
+            y2_c = min(height, max(0, y2 - pad_y2))  # Crop from bottom
+            x1_c = min(width, max(0, x1 + pad_x1))   # Crop from left
+            x2_c = min(width, max(0, x2 - pad_x2))   # Crop from right
+            
+            # Draw rectangle for this crop area on the debug image
             if y2_c > y1_c and x2_c > x1_c:
+                cv2.rectangle(debug_img, (x1_c, y1_c), (x2_c, y2_c), crop_color, crop_thickness)  # type: ignore
                 # Extract the cropped stamp image
                 stamp = img[y1_c:y2_c, x1_c:x2_c]
                 
@@ -76,4 +101,8 @@ for batch in metadata['batches']:
     # Save position metadata to a JSON file
     # This helps track where each stamp was located in the original grid
     with open(os.path.join(output_dir, 'positions.json'), 'w') as f:
-        json.dump(positions, f, indent=2) 
+        json.dump(positions, f, indent=2)
+    
+    # Save the debug image with crop lines
+    debug_filename = f"debug_crop_lines_w{stamp_w_px}_h{stamp_h_px}_wp{padding_x}_hp{padding_y}.jpg"
+    cv2.imwrite(os.path.join(output_dir, debug_filename), debug_img)  # type: ignore 

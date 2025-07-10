@@ -4,8 +4,8 @@
       "scan_file": "1st_eight_by_5.jpg",
       "rows": 5,
       "cols": 8,
-      "stamp_width_cm": 4.5,
-      "stamp_height_cm": 3.0,
+      "stamp_width_cm": 3.0,
+      "stamp_height_cm": 4.5,
       "padding_x": 23,
       "padding_y": 38
     }
