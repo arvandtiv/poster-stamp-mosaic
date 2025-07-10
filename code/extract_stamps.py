@@ -11,11 +11,18 @@ import json
 with open('code/batch_metadata.json', 'r') as f:
     metadata = json.load(f)
 
+# Create single output directory for all batches
+output_dir = "extracted_stamps"
+os.makedirs(output_dir, exist_ok=True)
+
+# List to store position information for all extracted stamps
+all_positions = []
+
 # Process each batch defined in the metadata
-for batch in metadata['batches']:
+for batch_idx, batch in enumerate(metadata['batches']):
     # Extract configuration parameters from the batch
     input_image = batch['scan_file']  # Path to the scanned image file
-    output_dir = f"extracted_stamps_{os.path.splitext(os.path.basename(input_image))[0]}"  # Create output directory name based on input filename
+    batch_name = os.path.splitext(os.path.basename(input_image))[0]  # Get batch name from filename
     rows = batch['rows']  # Number of rows in the stamp grid
     cols = batch['cols']  # Number of columns in the stamp grid
     
@@ -27,9 +34,6 @@ for batch in metadata['batches']:
     # Get stamp dimensions from batch metadata
     stamp_width_cm = batch.get('stamp_width_cm', 3.0)  # Physical width in cm
     stamp_height_cm = batch.get('stamp_height_cm', 4.5)  # Physical height in cm
-    
-    # Create output directory if it doesn't exist
-    os.makedirs(output_dir, exist_ok=True)
     
     # Load the input image using OpenCV
     img = cv2.imread(input_image)  # type: ignore
@@ -54,9 +58,6 @@ for batch in metadata['batches']:
     # Calculate the size of each stamp cell in the grid (for reference)
     grid_stamp_h = height // rows  # Height of each stamp cell
     grid_stamp_w = width // cols   # Width of each stamp cell
-    
-    # List to store position information for each extracted stamp
-    positions = []
     
     # --- DEBUG: Draw crop lines on a copy of the input image ---
     debug_img = img.copy()
@@ -89,20 +90,26 @@ for batch in metadata['batches']:
                 # Extract the cropped stamp image
                 stamp = img[y1_c:y2_c, x1_c:x2_c]
                 
-                # Generate filename for this stamp (1-indexed for user-friendly naming)
-                filename = f'stamp_r{row+1}_c{col+1}.jpg'
+                # Generate filename for this stamp with batch prefix
+                filename = f'{batch_name}_r{row+1}_c{col+1}.jpg'
                 
                 # Save the extracted stamp as a JPEG file
                 cv2.imwrite(os.path.join(output_dir, filename), stamp)  # type: ignore
                 
                 # Record position information for this stamp
-                positions.append({'row': row+1, 'col': col+1, 'file': filename})
-    
-    # Save position metadata to a JSON file
-    # This helps track where each stamp was located in the original grid
-    with open(os.path.join(output_dir, 'positions.json'), 'w') as f:
-        json.dump(positions, f, indent=2)
+                all_positions.append({
+                    'batch': batch_name,
+                    'row': row+1,
+                    'col': col+1,
+                    'file': filename,
+
+                })
     
     # Save the debug image with crop lines
-    debug_filename = f"debug_crop_lines_w{stamp_w_px}_h{stamp_h_px}_wp{padding_x}_hp{padding_y}.jpg"
-    cv2.imwrite(os.path.join(output_dir, debug_filename), debug_img)  # type: ignore 
+    debug_filename = f"debug_crop_lines_{batch_name}_w{stamp_w_px}_h{stamp_h_px}_wp{padding_x}_hp{padding_y}.jpg"
+    cv2.imwrite(os.path.join(output_dir, debug_filename), debug_img)  # type: ignore
+
+# Save aggregated position metadata to a single JSON file
+# This helps track where each stamp was located across all batches
+with open(os.path.join(output_dir, 'positions.json'), 'w') as f:
+    json.dump(all_positions, f, indent=2) 
